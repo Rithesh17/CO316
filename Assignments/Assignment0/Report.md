@@ -19,9 +19,9 @@ size, etc. Answer the following questions in your report</i><br>
 4. <i>Under what conditions might a programmer choose not want to launch the maximum number of threads?</i><br><br>
   
 5. <i>What can limit a program from launching the maximum number of threads on a GPU?</i><br><br>
-  Some of the limitations are:
-  a. Number of <b>Register files</b> in the Streaming Multiprocessor (SM)
-  b. Amount of <b>Shared Memory</b> on the SM
+  Some of the limitations are:<br>
+  a. Number of <b>Register files</b> in the Streaming Multiprocessor (SM)<br>
+  b. Amount of <b>Shared Memory</b> on the SM<br>
   c. Maximum number of threads running concurrently in SM<br><br>
   
 6. <i>What is shared memory? How much shared memory is on your GPU?</i><br><br>
