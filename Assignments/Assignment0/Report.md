@@ -42,5 +42,5 @@ size, etc. Answer the following questions in your report</i><br>
   For invoking the kernel we specify the number of threads to be launched in a block, and the number of blocks to be launched. But the threads are not directly given the resources for execution. Instead, the threads in a block are further grouped into warps. <b>The warps in each block execute in SIMD fashion</b>.
   Warp size: <b>32</b> threads
   
-10. <i>Is double precision supported on your GPU?</i>
+10. <i>Is double precision supported on your GPU?</i><br><br>
   Yes.
