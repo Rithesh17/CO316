@@ -21,9 +21,21 @@ size, etc. Answer the following questions in your report</i><br>
 5. <i>What can limit a program from launching the maximum number of threads on a GPU?</i><br><br>
 
 6. <i>What is shared memory? How much shared memory is on your GPU?</i><br><br>
-  Data stored in the shared memory is accessible to <b>all the threads inside a block</b>.<br>
+  Data stored in the shared memory is accessible by <b>all the threads inside a block</b>.<br>
   <b>Location: </b>Inside the GPU chip.<br>
   <b>Duration: </b>Till the block exist.<br><br>
-  Shared memory in the GPU: <b>49152</b> per block.
+  Shared memory in the GPU: <b>49152</b> bytes per block.
 
-7. <i>What is global memory? How much global memory
+7. <i>What is global memory? How much global memory is on your GPU?</i><br><br>
+  Data stored in the global memory is accessible by <b>all the threads within the application</b> (including the host).<br>
+  <b>Location: </b>Outside the GPU chip.<br>
+  <b>Duration: </b>Till the host allocation is completed.<br><br>
+  Global memory in the GPU: <b>3405643776</b> bytes.
+
+8. <i>What is constant memory? How much constant memory is on your GPU?</i><br><br>
+  Data in the constant memory is accessible by all the threads in an application, but it is <b>read-only</b>. It is preferred over global memory for its reduced memory bandwidth.<br>
+  <b>Location: </b>Outside the GPU chip.<br>
+  <b>Duration: </b>Till the host allocation is completed.<br><br>
+  Constant memory in the GPU: <b>65536</b> bytes.
+
+9. <i>What does warp size signify on a GPU? What is your GPU’s warp size?</i><br><br>
