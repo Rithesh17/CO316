@@ -1,3 +1,4 @@
+#include<iostream>
 
 static char *base_dir;
 
