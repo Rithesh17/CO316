@@ -1,7 +1,41 @@
+#include"wb.h"
+#include<cuda.h>
+#include<cuda_runtime_api.h>
 
 #define BLUR_SIZE 5
 
 //@@ INSERT CODE HERE
+
+__global__ void imgBlur(float* imgIn, float* imgOut, int imageWidth, int imageHeight)
+{
+  int idx = blockIdx.x * blockDim.x + threadIdx.x;
+  int idy = blockIdx.y * blockDim.y + threadIdx.y;
+
+  __shared__ int count[25];
+  __shared__ float sum[25];
+
+  int i;
+
+  for(i=0; i<25; i++)
+  {
+    count[i] = 0;
+    sum[i] = 0;
+  }
+
+  if(idx < imageWidth && idy < imageHeight)
+  {
+    int blurWindowNo = (idx/BLUR_SIZE)*imageWidth+(idy/BLUR_SIZE);
+
+    __syncthreads();
+
+    count[blurWindowNo] ++;
+    sum[blurWindowNo] += imgIn[idx*imageWidth+idy];
+
+    __syncthreads();
+
+    imgOut[idx*imageWidth+idy] = (float)sum[blurWindowNo] / count[blurWindowNo];
+  }
+}
 
 int main(int argc, char *argv[]) {
 
@@ -15,7 +49,6 @@ int main(int argc, char *argv[]) {
   float *deviceInputImageData;
   float *deviceOutputImageData;
 
-
   /* parse the input arguments */
   //@@ Insert code here
 
@@ -25,7 +58,9 @@ int main(int argc, char *argv[]) {
     exit(0);
   }
 
-  inputImageFile = wbArg_getInputFile(argv, 4);
+  wbArg_t args = {argc, argv};
+
+  inputImageFile = wbArg_getInputFile(args, 3);
 
   inputImage = wbImport(inputImageFile);
 
@@ -58,6 +93,11 @@ int main(int argc, char *argv[]) {
   ///////////////////////////////////////////////////////
   wbTime_start(Compute, "Doing the computation on the GPU");
 
+  dim3 blockSize(15, 15, 1);
+  dim3 gridSize((int)ceil(imageWidth/(float)blockSize.x), (int)ceil(imageHeight/(float)blockSize.y), 1);
+
+  imgBlur<<<gridSize, blockSize>>>(deviceInputImageData, deviceOutputImageData, imageWidth, imageHeight);
+
   wbTime_stop(Compute, "Doing the computation on the GPU");
 
   ///////////////////////////////////////////////////////
@@ -69,7 +109,7 @@ int main(int argc, char *argv[]) {
 
   wbTime_stop(GPU, "Doing GPU Computation (memory + compute)");
 
-  wbSolution(args, outputImage);
+  wbSolution(args, 5, outputImage);
 
   cudaFree(deviceInputImageData);
   cudaFree(deviceOutputImageData);
