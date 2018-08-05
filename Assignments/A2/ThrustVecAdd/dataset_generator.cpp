@@ -55,7 +55,7 @@ static void create_dataset(int datasetNum, int dim) {
 
 int main() {
 
-  create_dataset(0, 16);
+/*  create_dataset(0, 16);
   create_dataset(1, 64);
   create_dataset(2, 93);
   create_dataset(3, 112);
@@ -64,6 +64,6 @@ int main() {
   create_dataset(6, 1233);
   create_dataset(7, 1033);
   create_dataset(8, 4098);
-  create_dataset(9, 4018);
+*/  create_dataset(9, 4018);
   return 0;
 }

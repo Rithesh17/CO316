@@ -13,13 +13,15 @@ float* readData(char* filename)
   
   int num, i;
   
-  fscanf(handle, "%d\n", &num);
+  fscanf(handle, "%d", &num);
   
   float data[num];
   
   for(i=0; i<num; i++)
-    fscanf(handle, "%f\n", &data[i]);
+    fscanf(handle, "%f", &data[i]);
   
+  printf("%f %f %f\n", data[0], data[1], data[2]);
+
   return data;
 }
 
@@ -27,9 +29,8 @@ float* readData(char* filename)
 
 int main(int argc, char *argv[]) {
 
-  float *hostInput1 = nullptr;
-  float *hostInput2 = nullptr;
-  float *hostOutput = nullptr;
+  float *hostInput1 = NULL;
+  float *hostInput2 = NULL;
   int i;
 
   /* parse the input arguments */
@@ -37,7 +38,7 @@ int main(int argc, char *argv[]) {
 
   if(argc != 11)
   {
-    printf("Usage: ./ThrustVectorAdd_Template -e <expected.raw> -i <input0.raw> , <input1.raw> -o <output.raw> -t vector");
+    printf("\nUsage: ./ThrustVectorAdd_Template -e <expected.raw> -i <input0.raw> , <input1.raw> -o <output.raw> -t vector\n\n");
     return 0;
   }
   
@@ -49,8 +50,8 @@ int main(int argc, char *argv[]) {
   //@@ Read data from the raw files here
   //@@ Insert code here
   
-  hostInput1 = readData(input0);
-  hostInput2 = readData(input1);
+  hostInput1 = readData(input0_filename);
+  hostInput2 = readData(input1_filename);
 
   // Declare and allocate host output
   //@@ Insert code here
@@ -69,13 +70,15 @@ int main(int argc, char *argv[]) {
   // Copy to device
   //@@ Insert code here
 
-  thrust::copy(hostInput1.begin(), hostInput1.end(), devInput1.begin());
-  thrust::copy(hostInput2.begin(), hostInput2.end(), devInput2.begin());
+  thrust::copy(hostInput1, hostInput1 + num, devInput1.begin());
+  thrust::copy(hostInput2, hostInput2 + num, devInput2.begin());
   
   // Execute vector addition
   //@@ Insert Code here
 
-  thrust::transform(devInput1.begin(), devInput1.end(), devInput2.begin(), devOutput.begin());
+  //printf("dev: %f %f\n", devInput1[1], devInput2[1]);
+
+  thrust::transform(devInput1.begin(), devInput1.end(), devInput2.begin(), devOutput.begin(), thrust::plus<float>());
   
   /////////////////////////////////////////////////////////
 
@@ -84,6 +87,8 @@ int main(int argc, char *argv[]) {
 
   thrust::copy(devOutput.begin(), devOutput.end(), hostOutput.begin());
   
+  //printf("%d %d %d\n", hostOutput[1], hostOutput[2], hostOutput[0]);
+
   //Cross-verification
   
   float* verifyData = readData(output_filename);
@@ -96,9 +101,6 @@ int main(int argc, char *argv[]) {
       if((float)verifyData[i] != (float)hostOutput[i])
         printf("Data not matching: Location: %d\tOutput: %f\tExpected: %f\n", i+1, hostOutput[i], verifyData[i]);
     }
-  
-  free(hostInput1);
-  free(hostInput2);
-  free(hostOutput);
+    
   return 0;
 }

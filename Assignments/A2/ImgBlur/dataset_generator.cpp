@@ -1,3 +1,8 @@
+#include<iostream>
+#include<cstdlib>
+#include<cstdio>
+
+using namespace std;
 
 #define CHANNELS 3
 #define BLUR_SIZE 5
@@ -93,8 +98,8 @@ static void create_dataset(const int datasetNum, const int y,
   free(output_data);
 }
 
-int main() {
-
+int main() 
+{
   create_dataset(0, 256, 256);
   create_dataset(1, 512, 512);
   create_dataset(2, 512, 256);
