@@ -1,9 +1,21 @@
+#include <stdio.h>
+#include <stdlib>
+#include <math.h>
+#include <cuda.h>
+#include <cuda_runtime.h>
+#include "wb.h"
 
 #define BLUR_SIZE 5
 
 //@@ INSERT CODE HERE
 
-int main(int argc, char *argv[]) {
+__global__ void imgBlur(float* imgIn, float* imgOut, int imgWidth, int imgHeight)
+{
+  
+}
+
+int main(int argc, char *argv[]) 
+{
 
   int imageWidth;
   int imageHeight;
@@ -15,11 +27,16 @@ int main(int argc, char *argv[]) {
   float *deviceInputImageData;
   float *deviceOutputImageData;
 
+  if(argc != 9)
+  {
+    printf("Usage: ./ImageBlur_Template -e <expected.ppm> -i <input.ppm> -o <output.ppm> -t image");
+    exit(0);
+  }
   
   /* parse the input arguments */
   //@@ Insert code here
 
-  inputImageFile = wbArg_getInputFile(args, 0);
+  inputImageFile = wbArg_getInputFile(argv, 5);
 
   inputImage = wbImport(inputImageFile);
 
@@ -51,6 +68,11 @@ int main(int argc, char *argv[]) {
 
   ///////////////////////////////////////////////////////
   wbTime_start(Compute, "Doing the computation on the GPU");
+
+  dim3 blockSize(15, 15, 1);
+  dim3 gridSize((int)ceil(imageWidth/(float)blockSize.x), (int)ceil(imageHeight/(float)blockSize.y), 1);
+
+  imgBlur<<<gridSize, blockSize>>>(deviceInputImageData, deviceOutputImageData, imageWidth, imageHeight);
 
   wbTime_stop(Compute, "Doing the computation on the GPU");
 
