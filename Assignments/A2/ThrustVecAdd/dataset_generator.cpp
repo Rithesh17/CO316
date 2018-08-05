@@ -1,4 +1,8 @@
 #include<iostream>
+#include<cstdio>
+#include<cstdlib>
+
+using namespace std;
 
 static char *base_dir;
 
