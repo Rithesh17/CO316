@@ -112,6 +112,8 @@ int main(int argc, char *argv[]) {
 
   wbTime_stop(GPU, "Doing GPU Computation (memory + compute)");
 
+  wbImage_save(outputImage, "convoluted.ppm");
+
   //wbSolution(args, 5, outputImage);
 
   cudaFree(deviceInputImageData);
