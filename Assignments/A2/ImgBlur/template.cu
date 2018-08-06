@@ -29,6 +29,9 @@ __global__ void imgBlur(float* imgIn, float* imgOut, int imageWidth, int imageHe
     __syncthreads();
 
     count[blurWindowNo] ++;
+
+    __syncthreads();
+
     sum[blurWindowNo] += imgIn[idx*imageWidth+idy];
 
     __syncthreads();
@@ -109,7 +112,7 @@ int main(int argc, char *argv[]) {
 
   wbTime_stop(GPU, "Doing GPU Computation (memory + compute)");
 
-  wbSolution(args, 5, outputImage);
+  //wbSolution(args, 5, outputImage);
 
   cudaFree(deviceInputImageData);
   cudaFree(deviceOutputImageData);
