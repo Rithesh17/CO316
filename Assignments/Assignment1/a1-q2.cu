@@ -5,8 +5,11 @@
 #include <cuda.h>
 #include <cuda_runtime.h>
 
+//Number of threads in each dimension of the block.
+#define THREAD_NUM 16
+
 // CUDA kernel
-__global__ void matrixAdd(const int *A, const int *B, int *C, int n)
+__global__ void matrixAdd(float *A, float *B, float *C, int n)
 {
 	int row = blockIdx.y * blockDim.y + threadIdx.y;
 	int col = blockIdx.x * blockDim.x + threadIdx.x;
@@ -29,10 +32,10 @@ int main(void)
     	cudaError_t err = cudaSuccess;
 
     	int num = 512;
-    	size_t size = num * num * sizeof(int);
+    	size_t size = num * num * sizeof(float);
     	printf("\n\tMatrix addition of two %d * %d matrices\n\n", num, num);
 
-    	int h_A[num][num], h_B[num][num], h_C[num][num];
+    	float h_A[num][num], h_B[num][num], h_C[num][num];
 	
 	printf("Initializing host input vectors...\n");
     	for (int i = 0; i < num; i++)
@@ -46,7 +49,7 @@ int main(void)
 
     	// Allocate device memory (with error checking)
 	printf("Allocating device memory...\n");
-    	int *d_A = NULL;
+    	float *d_A = NULL;
     	err = cudaMalloc((void **)&d_A, size);
 	if (err != cudaSuccess)
     	{
@@ -89,9 +92,9 @@ int main(void)
 
     	// Launch CUDA Kernel
 	printf("Launching vector addition kernel...\n");
-	dim3 dimBlock(num, num);
-    	dim3 dimGrid((int) ceil(n/dimBlock.x), (int) ceil(n/dimBlock.y);
-    	matrixAdd<<<dimGrid, dimBlock>>>(d_A, d_B, d_C);
+	dim3 dimBlock(THREAD_NUM, THREAD_NUM, 1);
+    	dim3 dimGrid((int) ceil((float)num/dimBlock.x), (int) ceil((float)num/dimBlock.y), 1);
+    	matrixAdd<<<dimGrid, dimBlock>>>(d_A, d_B, d_C, num);
    	err = cudaGetLastError();
 
     	if (err != cudaSuccess)
@@ -135,4 +138,3 @@ int main(void)
     	printf("Done.\n\n");
     	return 0;
 }
-
