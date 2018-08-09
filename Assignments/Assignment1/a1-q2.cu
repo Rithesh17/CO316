@@ -42,8 +42,8 @@ int main(void)
     	{
 		for (int j = 0; j < num; j++)
         	{
-			h_A[i][j] = rand()/(float)RAND_MAX;
-        		h_B[i][j] = rand()/(float)RAND_MAX;
+			h_A[i][j] = rand();
+        		h_B[i][j] = rand();
 		}
     	}
 
@@ -57,7 +57,7 @@ int main(void)
         	exit(EXIT_FAILURE);
     	}
 
-    	float *d_B = NULL;
+    	int *d_B = NULL;
     	err = cudaMalloc((void **)&d_B, size);
 	if (err != cudaSuccess)
     	{
@@ -65,7 +65,7 @@ int main(void)
         	exit(EXIT_FAILURE);
     	}
 
-    	float *d_C = NULL;
+    	int *d_C = NULL;
     	err = cudaMalloc((void **)&d_C, size);
 
     	if (err != cudaSuccess)
