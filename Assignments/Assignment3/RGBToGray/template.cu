@@ -1,3 +1,6 @@
+#include"wb.h"
+#include<cuda.h>
+#include<cuda_runtime_api.h>
 
 //@@ define error checking macro here.
 #define errCheck(stmt)                                                     \
@@ -11,6 +14,21 @@
   } while (0)
 
 //@@ INSERT CODE HERE
+
+void __global__ RGBToGray(float* devIn, float* devOut, int imgWd, int imgHt)
+{
+  int idx = blockIdx.x * blockDim.x + threadIdx.x;
+  int idy = blockIdx.y * blockDim.y + threadIdx.y;
+
+  if(idx < imgHt && idy < imgWd)
+  {
+    int id = idx * imgWd + idy;
+    
+    devOut[id] = 0.21*devIn[3*id] + 0.71*devIn[3*id+1] + 0.07*devIn[3*id+2];
+  }
+}
+
+#define THREAD_NUM 16
 
 int main(int argc, char *argv[]) {
 
@@ -28,9 +46,15 @@ int main(int argc, char *argv[]) {
   /* parse the input arguments */
   //@@ Insert code here
 
-  args = 
+  if(argc != 9)
+  {
+    printf("Usage:  ./TiledMatrixMultiplication_Template -e <expected.pbm> -i <input.ppm> -o <output.pbm> -t matrix");
+    exit(0);
+  }
 
-  inputImageFile = wbArg_getInputFile(args, 0);
+  wbArg_t args = {argc, argv};
+
+  inputImageFile = wbArg_getInputFile(args, 3);
 
   inputImage = wbImport(inputImageFile);
 
@@ -64,6 +88,11 @@ int main(int argc, char *argv[]) {
   wbTime_start(Compute, "Doing the computation on the GPU");
   //@@ INSERT CODE HERE
 
+  dim3 blockSize(THREAD_NUM, THREAD_NUM, 1);
+  dim3 gridSize((int)ceil(imageWidth/(float)blockSize.x), (int)ceil(imageHeight/(float)blockSize.y), 1);
+
+  RGBToGray<<<gridSize, blockSize>>>(deviceInputImageData, deviceOutputImageData, imageWidth, imageHeight);
+  
   wbTime_stop(Compute, "Doing the computation on the GPU");
 
   ///////////////////////////////////////////////////////
@@ -75,7 +104,7 @@ int main(int argc, char *argv[]) {
 
   wbTime_stop(GPU, "Doing GPU Computation (memory + compute)");
 
-  wbSolution(args, outputImage);
+  wbSolution(args, 5, outputImage);
 
   cudaFree(deviceInputImageData);
   cudaFree(deviceOutputImageData);
