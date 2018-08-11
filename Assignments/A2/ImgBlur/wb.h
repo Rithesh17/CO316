@@ -362,7 +362,7 @@ wbImage_t wbImport(const char* inputFile)
             image._imageHeight = atoi(heightStr);
             std::cout << "Height: " << image._imageHeight << std::endl;
             p = numColorsStr;
-	    fileInput.get();
+	    //fileInput.get();
             while(isdigit(*p = fileInput.get())) { 
                 p++; 
             }
