@@ -9,12 +9,10 @@
 
 #define TILE_WIDTH 16
 
-int num;
-
 void checkCUDAError(const char *msg);
 
 // Matrix multiplication
-__global__ void matrix_multiply(float *a, float *b, float *c, size_t width)
+__global__ void matrix_multiply(float *a, float *b, float *c, int num, size_t width)
 {
   	// create shorthand names for threadIdx & blockIdx
   	int tx = threadIdx.x, ty = threadIdx.y;
@@ -36,7 +34,7 @@ __global__ void matrix_multiply(float *a, float *b, float *c, size_t width)
     		// collaboratively load tiles into __shared__ 
 		if (row < width && i*TILE_WIDTH + tx < width)
 		{	
-    			s_a[ty][tx] = a[row*width + i*TILE_WIDTH + tx)];
+    			s_a[ty][tx] = a[row*width + i*TILE_WIDTH + tx];
 		}
 		else
 		{
@@ -48,7 +46,7 @@ __global__ void matrix_multiply(float *a, float *b, float *c, size_t width)
 		}
 		else
 			s_b[ty][tx] = 0.0;
-		}
+		
 
     		// wait until all data is loaded before allowing any thread in this block to continue
     		__syncthreads();
@@ -62,6 +60,7 @@ __global__ void matrix_multiply(float *a, float *b, float *c, size_t width)
     		// wait until all threads are finished with the data before allowing any thread in this block to continue
     		__syncthreads();
 	}
+
 	if (row < width && col < width)
 	{
 		c[row*num + col] = result;
@@ -69,7 +68,7 @@ __global__ void matrix_multiply(float *a, float *b, float *c, size_t width)
 }
 
 // To read input files
-float* readData(char* filename)
+float* readData(char* filename, int* num)
 {
 	FILE* handle = fopen(filename, "r");
   
@@ -81,11 +80,11 @@ float* readData(char* filename)
   
   	int i;
   
-  	fscanf(handle, "%d", &num);
+  	fscanf(handle, "%d", num);
   
-  	float *data = = (float *)malloc(sizeof(float) * num * num);
+  	float *data = (float *)malloc(sizeof(float) * *num * (*num));
   
-  	for (i = 0; i < num; i++)
+  	for (i = 0; i < *num; i++)
     	{
 		fscanf(handle, "%f", &data[i]);
 	}
@@ -101,7 +100,7 @@ int main(int argc, char *argv[])
 {
 	float *h_A = NULL;
 	float *h_B = NULL;
-  	int i;
+  	int i, num;
 
   	// parse the input arguments
 	if(argc != 11)
@@ -116,8 +115,8 @@ int main(int argc, char *argv[])
   
   	// Import host input data
   
-  	h_A = readData(input0_filename);
- 	h_B = readData(input1_filename);
+  	h_A = readData(input0_filename, &num);
+ 	h_B = readData(input1_filename, &num);
 
 	// Host output declaration and memory allocation
 	float *h_C = (float *)malloc(sizeof(float) * num * num);
@@ -130,22 +129,22 @@ int main(int argc, char *argv[])
 	checkCUDAError("CUDA malloc");
 
  	// copy host input to the device
-  	cudaMemcpy(d_a, h_a, sizeof(float) * num * num, cudaMemcpyHostToDevice);
-	cudaMemcpy(d_b, h_b, sizeof(float) * num * num, cudaMemcpyHostToDevice);
+  	cudaMemcpy(d_a, h_A, sizeof(float) * num * num, cudaMemcpyHostToDevice);
+	cudaMemcpy(d_b, h_B, sizeof(float) * num * num, cudaMemcpyHostToDevice);
 	checkCUDAError("CUDA memcpy");
 	
 	// kernel launch
     	dim3 dimBlock(TILE_WIDTH,TILE_WIDTH, 1);
 	dim3 dimGrid((num - 1) / TILE_WIDTH + 1, (num - 1) / TILE_WIDTH + 1, 1);
- 	matrix_multiply<<<dimGrid,dimBlock>>>(d_a, d_b, d_c, num);
+ 	matrix_multiply<<<dimGrid,dimBlock>>>(d_a, d_b, d_c, num, num);
 
 	// Copy result from device to host
-	cudaMemcpy(h_C, d_C, sizeof(float) * num * num, cudaMemcpyDevicetoHost);
+	cudaMemcpy(h_C, d_c, sizeof(float) * num * num, cudaMemcpyDeviceToHost);
 	checkCUDAError("CUDA memcpy results");
 
   	//Cross-verification
   
-  	float* verifyData = readData(output_filename);
+  	float* verifyData = readData(output_filename, &num);
   
   	if(num * num != sizeof(verifyData)/sizeof(float))
     		printf("Size not matching: Output size: %d\tExpected size: %d\n", num * num, sizeof(verifyData)/sizeof(float));
