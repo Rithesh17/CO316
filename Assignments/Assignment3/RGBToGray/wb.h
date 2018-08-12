@@ -18,7 +18,7 @@
 #include <iomanip>
 #include <list>
 #include <sstream>
-#include <string>
+#include <cstring>
 #include <vector>
 
 // CUDA

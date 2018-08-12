@@ -20,7 +20,7 @@ float* readData(char* filename)
   for(i=0; i<num; i++)
     fscanf(handle, "%f", &data[i]);
   
-  printf("%f %f %f\n", data[0], data[1], data[2]);
+  //printf("%f %f %f\n", data[0], data[1], data[2]);
 
   return data;
 }
