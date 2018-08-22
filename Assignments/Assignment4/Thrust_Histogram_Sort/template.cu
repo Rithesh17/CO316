@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
   if(argc != 3)
   {
     printf("\nUsage: ./a.out <input.raw> <output.raw>\n\n");
+    exit(1);
   }
 
   args = wbArg_read(argc, argv);
