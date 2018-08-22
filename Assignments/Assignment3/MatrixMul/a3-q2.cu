@@ -1,5 +1,3 @@
-// CUDA program to perform matrix multiplication of two large integer matrices
-
 #include <stdio.h>
 #include <math.h>
 #include <cuda.h>
@@ -9,7 +7,7 @@
 #define THREAD_NUM 16
 
 // CUDA kernel
-__global__ void matrixMul(float *A, float *B, float *C, int n)
+__global__ void matrixMul(int *A, int *B, int *C, int n)
 {
 	int row = blockIdx.y * blockDim.y + threadIdx.y;
 	int col = blockIdx.x * blockDim.x + threadIdx.x;
@@ -18,10 +16,10 @@ __global__ void matrixMul(float *A, float *B, float *C, int n)
 
     	if (row < num && col < num)
     	{
-        	float Cvalue = 0.0;
+        	long Cvalue = 0;
 		for (int i = 0; i < num; i++)
 		{
-			Cvalue += A[row * num + i] * B[col + i * num];
+			Cvalue += A[row * num + i] * B[i * num + col];
 		}
 		C[row * num + col] = Cvalue;
     	}
@@ -34,25 +32,27 @@ int main(void)
     	// Error code to check return values for CUDA calls
     	cudaError_t err = cudaSuccess;
 
-    	int num = 512;
-    	size_t size = num * num * sizeof(float);
-    	printf("\n\tMatrix addition of two %d * %d matrices\n\n", num, num);
+    	int num = 512, i, j;
+    	size_t size = num * num * sizeof(int);
+    	printf("\n\tMatrix multiplication of two %d * %d matrices\n\n", num, num);
 
-    	float h_A[num][num], h_B[num][num], h_C[num][num];
+    	int h_A[num][num], h_B[num][num], h_C[num][num];
 	
 	printf("Initializing host input vectors...\n");
     	for (int i = 0; i < num; i++)
     	{
 		for (int j = 0; j < num; j++)
         	{
-			h_A[i][j] = rand();
-        		h_B[i][j] = rand();
+			//h_A[i][j] = rand();
+        		//h_B[i][j] = rand();
+			h_A[i][j] = 1;
+			h_B[i][j] = 1;
 		}
     	}
 
     	// Allocate device memory (with error checking)
 	printf("Allocating device memory...\n");
-    	float *d_A = NULL;
+    	int *d_A = NULL;
     	err = cudaMalloc((void **)&d_A, size);
 	if (err != cudaSuccess)
     	{
@@ -92,9 +92,33 @@ int main(void)
         	fprintf(stderr, "Failed to copy vector B from host to device (error code %s)!\n", cudaGetErrorString(err));
         	exit(EXIT_FAILURE);
     	}
+	printf("Displaying the input matrices...\n\nMatrix A: \n");
 
+        for(i=0; i<num; i++){
+                for(j=0; j<num; j++)
+                        printf("%d ", h_A[i][j]);
+                printf("\n");
+        }
+        printf("\nMatrix B: ");
+
+        for(i=0; i<num; i++){
+                for(j=0; j<num; j++)
+                        printf("%d ", h_B[i][j]);
+                printf("\n");
+        }
+        printf("\n");
+/*
+        printf("\nd_b:\n");
+
+        for(i=0; i<num; i++){
+                for(j=0; j<num; j++)
+                        printf("%d ", d_B[i*num+j]);
+                printf("\n");
+        }
+        printf("\n");
+*/
     	// Launch CUDA Kernel
-	printf("Launching vector addition kernel...\n");
+	printf("Launching vector multiplication kernel...\n");
 	dim3 dimBlock(THREAD_NUM, THREAD_NUM, 1);
     	dim3 dimGrid((int) ceil((float)num/dimBlock.x), (int) ceil((float)num/dimBlock.y), 1);
     	matrixMul<<<dimGrid, dimBlock>>>(d_A, d_B, d_C, num);
@@ -114,29 +138,46 @@ int main(void)
         	fprintf(stderr, "Failed to copy vector C from device to host (error code %s)!\n", cudaGetErrorString(err));
         	exit(EXIT_FAILURE);
     	}
+/*
+	printf("d_c:\n");
+
+        for(i=0; i<num; i++){
+                for(j=0; j<num; j++)
+                        printf("%d ", d_C[i*num+j]);
+                printf("\n");
+        }
+*/
+        printf("Displaying the output matrix...\n\nMatrix C: \n");
+
+	for(i=0; i<num; i++){
+		for(j=0; j<num; j++)
+			printf("%d ", h_C[i][j]);
+		printf("\n");
+	}
+	printf("\n");
 
 	// Free device global memory
 	printf("Freeing device memory...\n");
     	err = cudaFree(d_A);
-	if (err != cudaSuccess)
+	/*if (err != cudaSuccess)
     	{
         	fprintf(stderr, "Failed to free device vector A (error code %s)!\n", cudaGetErrorString(err));
         	exit(EXIT_FAILURE);
-    	}
+    	}*/
 
     	err = cudaFree(d_B);
-	if (err != cudaSuccess)
+	/*if (err != cudaSuccess)
     	{
         	fprintf(stderr, "Failed to free device vector B (error code %s)!\n", cudaGetErrorString(err));
         	exit(EXIT_FAILURE);
-    	}
+    	}*/
 
     	err = cudaFree(d_C);
-	if (err != cudaSuccess)
+	/*if (err != cudaSuccess)
     	{
         	fprintf(stderr, "Failed to free device vector C (error code %s)!\n", cudaGetErrorString(err));
         	exit(EXIT_FAILURE);
-    	}
+    	}*/
 
     	printf("Done.\n\n");
     	return 0;
