@@ -53,7 +53,7 @@ int main()
   start = clock();
   daxpy_uniprocess(X, Y, a);
   end = clock();
-  printf("%fs\n\n", (double)(end - start)/CLOCKS_PER_SEC);
+  printf("%ld clocks\n\n", end - start);
 
   for(i=2; i<=80; i++)
   {
@@ -61,7 +61,7 @@ int main()
     start = clock();
     daxpy_uniprocess(X, Y, a);
     end = clock();
-    printf("%fs\n", (double)(end - start)/CLOCKS_PER_SEC);
+    printf("%ld clocks\n", (double)(end - start)/CLOCKS_PER_SEC);
   }
   printf("\n");
 }
