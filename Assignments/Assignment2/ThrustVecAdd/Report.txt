@@ -1,0 +1,22 @@
+Vector Addition using Thrust
+
+Contributors:
+Anusha S (16CO102)
+Rithesh K (16CO253)
+
+We have implemented the function in the template.cu file. The screenshot of the execution is included.
+Only for the second element in the vector the generated data and the expected data are not matching (as shown in the screenshot).
+
+Questions:
+1. How many floating operations are being performed in your vector add kernel?
+      2 * VECTOR_SIZE operations (one for addition of each element of the vectors, and the other for the iterator).
+
+2. How many global memory reads are being performed by your kernel?
+      2 * (VECTOR_SIZE + 1) reads (for each vector, 1 to load the size of vector and VECTOR_SIZE operations to load the entire vector).
+
+3. How many global memory writes are being performed by your kernel?
+      VECTOR_SIZE writes (for the output vector)
+
+4. In what ways did Thrust make developing a functional vector addition code easier or harder?
+      1. It was east to use once we get to know its functions
+      2. It has optimally implemented code for high performance in GPU

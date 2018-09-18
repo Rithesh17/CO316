@@ -1,0 +1,18 @@
+Assignment 1
+
+By:
+Anusha S (16CO102)
+Rithesh K (16CO253)
+
+Question 2:
+Perform Matrix Addition of two large integer matrices in CUDA. Answer the following questions.
+
+1. How many floating operations are being performed in the matrix addition kernel?
+  Floating operations = None.<br>
+  Integer operations = Row calculation, Column calculation, Index calculation, and Addition each.
+
+2. How many global memory reads are being performed by your kernel?
+  Global memory reads = 3 * n * n = 3 * 512 * 512 = 786432
+
+3. How many global memory writes are being performed by your kernel?
+  Global memory writes = n * n = 512 * 512 = 262144.

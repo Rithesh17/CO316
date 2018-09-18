@@ -12,18 +12,18 @@ size, etc. Answer the following questions in your report</i><br>
   We are using <b>NVIDIA CUDA</b> architecture. <br><br>
 2. <i>What are the maximum block dimensions for your GPU?</i><br><br>
   Maximum block dimensions: <b>[1024, 1024, 64]</b><br><br>
-3. <i>Suppose you are launching a one dimensional grid and block. If the hardware's maximum grid dimension is 
+3. <i>Suppose you are launching a one dimensional grid and block. If the hardware's maximum grid dimension is
 65535 and the maximum block dimension is 512, what is the maximum number threads can be launched on the GPU?</i><br><br>
-  Maximum block dimension: 512.<br>
+  Maximum block dimension: 512<br>
   Hence the maximum number of threads in one block would be: <b>512</b>.<br><br>
 4. <i>Under what conditions might a programmer choose not want to launch the maximum number of threads?</i><br><br>
-  
+
 5. <i>What can limit a program from launching the maximum number of threads on a GPU?</i><br><br>
   Some of the limitations are:<br>
   a. Number of <b>Register files</b> in the Streaming Multiprocessor (SM)<br>
   b. Amount of <b>Shared Memory</b> on the SM<br>
   c. Maximum number of threads running concurrently in SM<br><br>
-  
+
 6. <i>What is shared memory? How much shared memory is on your GPU?</i><br><br>
   Data stored in the shared memory is accessible by <b>all the threads inside a block</b>.<br>
   <b>Location: </b>Inside the GPU chip.<br>
@@ -45,6 +45,6 @@ size, etc. Answer the following questions in your report</i><br>
 9. <i>What does warp size signify on a GPU? What is your GPU’s warp size?</i><br><br>
   For invoking the kernel we specify the number of threads to be launched in a block, and the number of blocks to be launched. But the threads are not directly given the resources for execution. Instead, the threads in a block are further grouped into warps. <b>The warps in each block execute in SIMD fashion</b>.
   Warp size: <b>32</b> threads
-  
+
 10. <i>Is double precision supported on your GPU?</i><br><br>
   Yes.
