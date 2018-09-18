@@ -7,7 +7,7 @@
 #define MAX_THREADS 56
 #define MAX(a, b) (a>b)?a:b
 
-unsigned long int i, n;
+unsigned long int n;
 
 void daxpy_uniprocess(double* X, double* Y, int a)
 {
@@ -19,7 +19,7 @@ void daxpy_multi_process(double* X, double* Y, int a, unsigned long int num_thre
 {
   omp_set_num_threads(MAX(num_threads, MAX_THREADS));
   int thread_id;
-  unsigned long int index;
+  unsigned long int i, index;
 
   #pragma omp parallel
   {
@@ -36,6 +36,7 @@ int main()
 {
   n = rand()%(1<<16);
   double X[n], Y[n];
+  unsigned long int i;
 
   for(i=0; i<n; i++)
   {
