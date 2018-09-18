@@ -11,6 +11,7 @@ unsigned long int n;
 
 void daxpy_uniprocess(double* X, double* Y, int a)
 {
+  unsigned long int i;
   for(i=0; i<n; i++)
     X[i] = a*X[i]+Y[i];
 }
@@ -34,7 +35,7 @@ void daxpy_multi_process(double* X, double* Y, int a, unsigned long int num_thre
 
 int main()
 {
-  n = rand()%(1<<16);
+  n = 1<<16;
   double X[n], Y[n];
   unsigned long int i;
 
