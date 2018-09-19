@@ -13,8 +13,6 @@
 inline double dist(double* p1, double* p2)
 { return sqrt((p1[0]-p2[0])*(p1[0]-p2[0])+(p1[1]-p2[1])*(p1[1]-p2[1]));}
 
-int pid = getpid();
-
 double pi_uniprocess()
 {
   double centre[2] = {R/2.0, R/2.0};
@@ -61,10 +59,10 @@ double pi_multiprocess_safe(int num_threads)
 
   #pragma omp parallel
   {
-    int i, thread_id = omp_get_thread_num(), num_threads = omp_get_num_threads;
+    int i, thread_id = omp_get_thread_num(), num_threads = omp_get_num_threads();
     int partial_in_circle = 0;
 
-    int state = time(NULL) ^ pid ^ thread_id;
+    int state = time(NULL) ^ thread_id;
 
     for(i=thread_id; i<MAX_POINTS; i+=num_threads)
     {
