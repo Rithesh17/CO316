@@ -4,7 +4,7 @@
 #include <time.h>
 #include<omp.h>
 
-#define MAX_THREADS 56
+#define MAX_THREADS 500
 #define MAX(a, b) (a>b)?a:b
 
 unsigned long int n;
@@ -18,7 +18,7 @@ void daxpy_uniprocess(double* X, double* Y, int a)
 
 void daxpy_multi_process(double* X, double* Y, int a, unsigned long int num_threads)
 {
-  omp_set_num_threads(MAX(num_threads, MAX_THREADS));
+  omp_set_num_threads(num_threads);
   int thread_id;
   unsigned long int i, index;
 
@@ -35,7 +35,7 @@ void daxpy_multi_process(double* X, double* Y, int a, unsigned long int num_thre
 
 int main()
 {
-  n = 1<<20;
+  n = 1<<16;
   double X[n], Y[n];
   unsigned long int i;
 
@@ -46,22 +46,34 @@ int main()
   }
 
   int a = 30;
+  int min_val_thread;
 
   double start, end;
+  double min_time;
 
   printf("Time taken by uniprocessor: ");
   start = omp_get_wtime();
   daxpy_uniprocess(X, Y, a);
   end = omp_get_wtime();
-  printf("Start time: %lf  End time: %lf  Time elapsed: %lf clocks\n\n", start, end, end - start);
+  printf("Start time: %lfs  End time: %lfs  Time elapsed: %lfs\n\n", start, end, end - start);
+  min_time = end - start;
+  min_val_thread = 1;
 
-  for(i=2; i<=80; i++)
+
+  for(i=2; i<=MAX_THREADS; i++)
   {
     printf("Time taken by %d threads: ", i);
     start = omp_get_wtime();
     daxpy_uniprocess(X, Y, a);
     end = omp_get_wtime();
-    printf("Start time: %lf  End time: %lf  Time elapsed: %lf clocks\n\n", start, end, end - start);
+    printf("Start time: %lf  End time: %lf  Time elapsed: %lfs\n", start, end, end - start);
+    if(end - start < min_time)
+    {
+      min_time = end - start;
+      min_val_thread = i;
+    }
   }
   printf("\n");
+
+  printf("Minimum time taken: %lfs\nNumber of threads: %d\n\n", min_time, min_val_thread);
 }
