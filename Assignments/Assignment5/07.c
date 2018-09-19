@@ -5,7 +5,7 @@
 #include <omp.h>
 
 #define MAX_THREADS 500
-#define MAX_POINTS 1000
+#define MAX_POINTS 10000
 #define R 1
 #define random() rand()/RAND_MAX
 #define random_r(s) rand_r(s)/RAND_MAX
@@ -15,22 +15,24 @@ inline double dist(double* p1, double* p2)
 
 double pi_uniprocess()
 {
-  double centre[2] = {R/2.0, R/2.0};
+  double centre[2] = {(float)R, (float)R};
   int i, in_circle = 0;
 
   for(i=0; i<MAX_POINTS; i++)
   {
-    double point[2] = {random()*R, random()*R};
+    double point[2] = {(float)rand()*2*R/RAND_MAX, (float)rand()*2*R/RAND_MAX};
     if(dist(centre, point)<=R)
       in_circle += 1;
   }
 
-  return in_circle * 4 * R * R / MAX_POINTS;
+//  printf("Points inside circle: %d\n", in_circle);
+
+  return (float)in_circle * 4.0 / MAX_POINTS;
 }
 
 double pi_multiprocess(int num_threads)
 {
-  double centre[2] = {R/2.0, R/2.0};
+  double centre[2] = {R, R};
   int in_circle = 0;
 
   #pragma omp parallel
@@ -40,7 +42,7 @@ double pi_multiprocess(int num_threads)
 
     for(i=thread_id; i<MAX_POINTS; i+=num_threads)
     {
-      double point[2] = {random()*R, random()*R};
+      double point[2] = {(float)rand()*2*R/RAND_MAX, (float)rand()*2*R/RAND_MAX};
       if(dist(centre, point)<=R)
         partial_in_circle += 1;
     }
@@ -49,12 +51,12 @@ double pi_multiprocess(int num_threads)
       in_circle += partial_in_circle;
   }
 
-    return in_circle * 4 * R * R / MAX_POINTS;
+    return (float)in_circle * 4 / MAX_POINTS;
 }
 
 double pi_multiprocess_safe(int num_threads)
 {
-  double centre[2] = {R/2.0, R/2.0};
+  double centre[2] = {R, R};
   int in_circle = 0;
 
   #pragma omp parallel
@@ -62,11 +64,11 @@ double pi_multiprocess_safe(int num_threads)
     int i, thread_id = omp_get_thread_num(), num_threads = omp_get_num_threads();
     int partial_in_circle = 0;
 
-    int state = time(NULL) ^ thread_id;
+    int state = rand() ^ thread_id;
 
     for(i=thread_id; i<MAX_POINTS; i+=num_threads)
     {
-      double point[2] = {random_r(&state)*R, random_r(&state)*R};
+      double point[2] = {(float)rand_r(&state)*2*R/RAND_MAX, (float)rand_r(&state)*2*R/RAND_MAX};
       if(dist(centre, point)<=R)
         partial_in_circle += 1;
     }
@@ -75,7 +77,7 @@ double pi_multiprocess_safe(int num_threads)
       in_circle += partial_in_circle;
   }
 
-    return in_circle * 4 * R * R / MAX_POINTS;
+    return (float)in_circle * 4 / MAX_POINTS;
 }
 
 int main()
@@ -89,6 +91,9 @@ int main()
   printf("Pi value from uniprocessor: %lf\tTime elapsed: %lfs\n\n", pi, end - start);
   int i;
 
+  int acc_thread, time_thread;
+  double acc = RAND_MAX, least_time = end - start;
+
   for(i=2; i<MAX_THREADS; i++)
   {
     start = omp_get_wtime();
@@ -96,16 +101,48 @@ int main()
     end = omp_get_wtime();
 
     printf("Pi value from %d threads: %lf\tTime elapsed: %lfs\n", i, pi, end - start);
+
+    if(abs(pi - 3.1415926535) < acc)
+    {
+      acc = abs(pi - 31415926535);
+      acc_thread = i;
+    }
+
+    if(end - start < least_time)
+    {
+      least_time = end - start;
+      time_thread = i;
+    }
   }
 
-  printf("\nUsing thred-safe random number generator:\n");
+  printf("-------------------------------------------------------------------------\nLeast time consumed: %lfs\tThreads: %d\n", acc, acc_thread, least_time, time_thread);
 
-  for(i=2; i<MAX_THREADS; i++)
+  printf("\nUsing thread-safe random number generator:\n");
+
+  acc = RAND_MAX;
+
+  for(i=2; i<=MAX_THREADS; i++)
   {
     start = omp_get_wtime();
     pi = pi_multiprocess_safe(i);
     end = omp_get_wtime();
 
     printf("Pi value from %d threads: %lf\tTime elapsed: %lfs\n", i, pi, end - start);
+
+    if(abs(pi - 3.1415926535) < acc)
+    {
+      acc = abs(pi - 31415926535);
+      acc_thread = i;
+    }
+
+    if(end - start < least_time)
+    {
+      least_time = end - start;
+      time_thread = i;
+    }
+
   }
+
+  printf("---------------------------------------------------------------------------\nLeast time consumed: %lfs\tThreads: %d\n", acc, acc_thread, least_time, time_thread);
+
 }
