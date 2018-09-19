@@ -53,7 +53,7 @@ int main()
   start = omp_get_wtime();
   daxpy_uniprocess(X, Y, a);
   end = omp_get_wtime();
-  printf("Start time: %ld  End time: %ld  Time elapsed: %ld clocks\n\n", start, end, end - start);
+  printf("Start time: %lf  End time: %lf  Time elapsed: %lf clocks\n\n", start, end, end - start);
 
   for(i=2; i<=80; i++)
   {
@@ -61,7 +61,7 @@ int main()
     start = omp_get_wtime();
     daxpy_uniprocess(X, Y, a);
     end = omp_get_wtime();
-    printf("Start time: %ld  End time: %ld  Time elapsed: %ld clocks\n\n", start, end, end - start);
+    printf("Start time: %lf  End time: %lf  Time elapsed: %lf clocks\n\n", start, end, end - start);
   }
   printf("\n");
 }
