@@ -47,22 +47,20 @@ int main()
 
   int a = 30;
 
-  printf("%ld, %d\n", n, a);
-
-  int start, end;
+  double start, end;
 
   printf("Time taken by uniprocessor: ");
-  start = clock();
+  start = omp_get_wtime();
   daxpy_uniprocess(X, Y, a);
-  end = clock();
+  end = omp_get_wtime();
   printf("Start time: %ld  End time: %ld  Time elapsed: %ld clocks\n\n", start, end, end - start);
 
   for(i=2; i<=80; i++)
   {
     printf("Time taken by %d threads: ", i);
-    start = clock();
+    start = omp_get_wtime();
     daxpy_uniprocess(X, Y, a);
-    end = clock();
+    end = omp_get_wtime();
     printf("Start time: %ld  End time: %ld  Time elapsed: %ld clocks\n\n", start, end, end - start);
   }
   printf("\n");
