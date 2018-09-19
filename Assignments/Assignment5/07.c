@@ -32,7 +32,7 @@ double pi_multiprocess(int num_threads)
   double centre[2] = {R/2.0, R/2.0};
   int in_circle = 0;
 
-  #pragma omp parallel for private(in_circle)
+  #pragma omp parallel
   {
     int i, thread_id = omp_get_thread_num(), num_threads = omp_get_num_threads;
     int partial_in_circle = 0;
@@ -56,7 +56,7 @@ double pi_multiprocess_safe(int num_threads)
   double centre[2] = {R/2.0, R/2.0};
   int in_circle = 0;
 
-  #pragma omp parallel for private(in_circle)
+  #pragma omp parallel
   {
     int i, thread_id = omp_get_thread_num(), num_threads = omp_get_num_threads;
     int partial_in_circle = 0;
