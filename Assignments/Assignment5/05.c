@@ -33,15 +33,17 @@ double pi_multiprocess(int num_threads)
     {
       x = (i+0.5)*step;
       partial_sum += 4.0/(1+x*x);
+//	partial_sum = 4.0/(1+x*x);
+
+//	#pragma omp atomic
+//	  sum += partial_sum;
     }
 
     #pragma omp atomic
-    {
       sum += partial_sum;
-    }
   }
 
-  return sum * steps;
+  return sum * step;
 }
 
 int main()
