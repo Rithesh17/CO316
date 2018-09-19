@@ -35,7 +35,7 @@ void daxpy_multi_process(double* X, double* Y, int a, unsigned long int num_thre
 
 int main()
 {
-  n = 1<<16;
+  n = 1<<20;
   double X[n], Y[n];
   unsigned long int i;
 
@@ -45,7 +45,9 @@ int main()
     Y[i] = rand() + rand() / RAND_MAX;
   }
 
-  int a = rand();
+  int a = 30;
+
+  printf("%ld, %d\n", n, a);
 
   int start, end;
 
