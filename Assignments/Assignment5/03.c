@@ -22,7 +22,7 @@ void daxpy_multi_process(double* X, double* Y, int a, unsigned long int num_thre
   int thread_id;
   unsigned long int i, index;
 
-  #pragma omp parallel
+  #pragma omp parallel for private(i)
   {
     thread_id = omp_get_thread_num();
     for(i=0; i<n/num_threads; i++)
