@@ -17,3 +17,4 @@ void main()
 	runtime = omp_get_wtime() - runtime;
 	printf("Runtime: %lf\n", runtime);
 }
+
