@@ -1,0 +1,13 @@
+Matrix Multiply
+Thread: 1	Runtime: 3.368165
+
+Threads: 2	Speedup: 0.549217
+Threads: 4	Speedup: 0.294341
+Threads: 8	Speedup: 0.164329
+Threads: 16	Speedup: 0.088306
+Threads: 32	Speedup: 0.075669
+Threads: 64	Speedup: 0.072078
+Threads: 128	Speedup: 0.057013
+Threads: 256	Speedup: 0.048167
+Threads: 512	Speedup: 0.047488
+Threads: 1024	Speedup: 0.048349

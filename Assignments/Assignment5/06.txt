@@ -1,0 +1,2 @@
+Calculation of pi - Worksharing and Reduction
+Pi value: 3.141593	Runtime: 0.005181

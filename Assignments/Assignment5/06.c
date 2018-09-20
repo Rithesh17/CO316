@@ -23,6 +23,7 @@ void main()
 	}
 	runtime = omp_get_wtime() - runtime;
 	pi = step * sum;
-	printf("Runtime: %lf\n", runtime); 
+	printf("Pi value: %f\tRuntime: %lf\n", pi, runtime); 
 }
+
 

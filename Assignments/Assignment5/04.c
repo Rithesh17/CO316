@@ -73,3 +73,4 @@ void main()
 		printf("Threads: %d\tSpeedup: %lf\n", i, runtime);
 	}
 }
+

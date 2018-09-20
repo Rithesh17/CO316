@@ -31,7 +31,7 @@ int main()
 {
 	printf("Producer - Consumer\n");
 	double *A, sum, runtime;
-  	int flag = 0;
+  	int flag = 0, i;
 	int numthreads;
 	omp_set_num_threads(Nthreads);
 	A = (double *) malloc(N * sizeof(double));
@@ -79,5 +79,10 @@ int main()
       		#pragma omp master
          	runtime = omp_get_wtime() - runtime;
    	}
+	printf("Array produced:\n");
+	for(i=0; i<N; i++)
+		printf("%lf\n", A[i]);
+
+	printf("\n\nSum of elements by the consumer: %lf\n", sum);
 	printf("Runtime: %lf \n",runtime);
 }
