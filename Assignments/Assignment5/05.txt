@@ -1,0 +1,998 @@
+Pi value from uniprocessor: 3.141593	Time elapsed: 0.000326s
+
+Pi value from 2 threads: 3.040840	Time elapsed: 0.000618s
+
+Pi value from 3 threads: 3.306598	Time elapsed: 0.000629s
+
+Pi value from 4 threads: 2.783970	Time elapsed: 0.000731s
+
+Pi value from 5 threads: 3.109560	Time elapsed: 0.000575s
+
+Pi value from 6 threads: 2.235739	Time elapsed: 0.000901s
+
+Pi value from 7 threads: 5.481835	Time elapsed: 0.001391s
+
+Pi value from 8 threads: 2.513234	Time elapsed: 0.000486s
+
+Pi value from 9 threads: 2.740003	Time elapsed: 0.002569s
+
+Pi value from 10 threads: 4.205634	Time elapsed: 0.002995s
+
+Pi value from 11 threads: 4.822996	Time elapsed: 0.001153s
+
+Pi value from 12 threads: 3.814233	Time elapsed: 0.002955s
+
+Pi value from 13 threads: 4.387083	Time elapsed: 0.002431s
+
+Pi value from 14 threads: 3.913943	Time elapsed: 0.000982s
+
+Pi value from 15 threads: 2.372386	Time elapsed: 0.002469s
+
+Pi value from 16 threads: 3.794556	Time elapsed: 0.003000s
+
+Pi value from 17 threads: 4.138111	Time elapsed: 0.003003s
+
+Pi value from 18 threads: 3.739263	Time elapsed: 0.002994s
+
+Pi value from 19 threads: 3.907140	Time elapsed: 0.003001s
+
+Pi value from 20 threads: 4.434247	Time elapsed: 0.002995s
+
+Pi value from 21 threads: 2.105442	Time elapsed: 0.000479s
+
+Pi value from 22 threads: 2.085533	Time elapsed: 0.002522s
+
+Pi value from 23 threads: 2.853321	Time elapsed: 0.000695s
+
+Pi value from 24 threads: 4.237723	Time elapsed: 0.000926s
+
+Pi value from 25 threads: 2.679385	Time elapsed: 0.002368s
+
+Pi value from 26 threads: 2.200619	Time elapsed: 0.000512s
+
+Pi value from 27 threads: 2.377859	Time elapsed: 0.002503s
+
+Pi value from 28 threads: 2.332923	Time elapsed: 0.000511s
+
+Pi value from 29 threads: 2.190904	Time elapsed: 0.000448s
+
+Pi value from 30 threads: 2.104257	Time elapsed: 0.000417s
+
+Pi value from 31 threads: 2.449215	Time elapsed: 0.002598s
+
+Pi value from 32 threads: 1.872225	Time elapsed: 0.000382s
+
+Pi value from 33 threads: 2.446302	Time elapsed: 0.000502s
+
+Pi value from 34 threads: 2.035827	Time elapsed: 0.000376s
+
+Pi value from 35 threads: 1.781095	Time elapsed: 0.000357s
+
+Pi value from 36 threads: 1.673855	Time elapsed: 0.000627s
+
+Pi value from 37 threads: 2.193430	Time elapsed: 0.000408s
+
+Pi value from 38 threads: 2.353238	Time elapsed: 0.000438s
+
+Pi value from 39 threads: 1.744768	Time elapsed: 0.000364s
+
+Pi value from 40 threads: 2.078177	Time elapsed: 0.000403s
+
+Pi value from 41 threads: 1.481785	Time elapsed: 0.000297s
+
+Pi value from 42 threads: 2.237450	Time elapsed: 0.000417s
+
+Pi value from 43 threads: 1.516527	Time elapsed: 0.000294s
+
+Pi value from 44 threads: 2.858147	Time elapsed: 0.000488s
+
+Pi value from 45 threads: 2.160873	Time elapsed: 0.000396s
+
+Pi value from 46 threads: 1.635236	Time elapsed: 0.000332s
+
+Pi value from 47 threads: 1.890710	Time elapsed: 0.000336s
+
+Pi value from 48 threads: 2.334222	Time elapsed: 0.000411s
+
+Pi value from 49 threads: 1.764342	Time elapsed: 0.000311s
+
+Pi value from 50 threads: 1.976114	Time elapsed: 0.000348s
+
+Pi value from 51 threads: 1.650224	Time elapsed: 0.000289s
+
+Pi value from 52 threads: 2.075021	Time elapsed: 0.000377s
+
+Pi value from 53 threads: 2.084107	Time elapsed: 0.000348s
+
+Pi value from 54 threads: 1.717725	Time elapsed: 0.000291s
+
+Pi value from 55 threads: 2.451172	Time elapsed: 0.005563s
+
+Pi value from 56 threads: 1.773776	Time elapsed: 0.005498s
+
+Pi value from 57 threads: 1.976049	Time elapsed: 0.002766s
+
+Pi value from 58 threads: 2.097362	Time elapsed: 0.000385s
+
+Pi value from 59 threads: 2.526418	Time elapsed: 0.000421s
+
+Pi value from 60 threads: 2.523190	Time elapsed: 0.000413s
+
+Pi value from 61 threads: 2.322956	Time elapsed: 0.000337s
+
+Pi value from 62 threads: 2.278049	Time elapsed: 0.000427s
+
+Pi value from 63 threads: 1.876253	Time elapsed: 0.000329s
+
+Pi value from 64 threads: 2.224296	Time elapsed: 0.000368s
+
+Pi value from 65 threads: 2.777476	Time elapsed: 0.000465s
+
+Pi value from 66 threads: 3.048109	Time elapsed: 0.000486s
+
+Pi value from 67 threads: 1.684263	Time elapsed: 0.000321s
+
+Pi value from 68 threads: 2.370834	Time elapsed: 0.000401s
+
+Pi value from 69 threads: 2.503904	Time elapsed: 0.000483s
+
+Pi value from 70 threads: 2.951708	Time elapsed: 0.000503s
+
+Pi value from 71 threads: 2.042140	Time elapsed: 0.000355s
+
+Pi value from 72 threads: 1.831204	Time elapsed: 0.000325s
+
+Pi value from 73 threads: 2.752226	Time elapsed: 0.000466s
+
+Pi value from 74 threads: 1.915379	Time elapsed: 0.000367s
+
+Pi value from 75 threads: 2.072101	Time elapsed: 0.000370s
+
+Pi value from 76 threads: 2.085368	Time elapsed: 0.000388s
+
+Pi value from 77 threads: 2.756868	Time elapsed: 0.000451s
+
+Pi value from 78 threads: 2.174159	Time elapsed: 0.000447s
+
+Pi value from 79 threads: 1.832387	Time elapsed: 0.000380s
+
+Pi value from 80 threads: 1.641267	Time elapsed: 0.000316s
+
+Pi value from 81 threads: 1.476438	Time elapsed: 0.000313s
+
+Pi value from 82 threads: 2.157897	Time elapsed: 0.000389s
+
+Pi value from 83 threads: 2.167292	Time elapsed: 0.000348s
+
+Pi value from 84 threads: 1.932052	Time elapsed: 0.000384s
+
+Pi value from 85 threads: 1.572886	Time elapsed: 0.000272s
+
+Pi value from 86 threads: 2.105821	Time elapsed: 0.000425s
+
+Pi value from 87 threads: 1.570619	Time elapsed: 0.000311s
+
+Pi value from 88 threads: 2.639160	Time elapsed: 0.000390s
+
+Pi value from 89 threads: 3.264563	Time elapsed: 0.000526s
+
+Pi value from 90 threads: 2.165060	Time elapsed: 0.000399s
+
+Pi value from 91 threads: 2.797075	Time elapsed: 0.000415s
+
+Pi value from 92 threads: 1.749592	Time elapsed: 0.000386s
+
+Pi value from 93 threads: 1.827649	Time elapsed: 0.000385s
+
+Pi value from 94 threads: 3.204071	Time elapsed: 0.000515s
+
+Pi value from 95 threads: 2.311729	Time elapsed: 0.000366s
+
+Pi value from 96 threads: 3.093881	Time elapsed: 0.000487s
+
+Pi value from 97 threads: 2.305595	Time elapsed: 0.000444s
+
+Pi value from 98 threads: 2.238654	Time elapsed: 0.000433s
+
+Pi value from 99 threads: 1.876980	Time elapsed: 0.000374s
+
+Pi value from 100 threads: 1.919690	Time elapsed: 0.000385s
+
+Pi value from 101 threads: 2.100688	Time elapsed: 0.000389s
+
+Pi value from 102 threads: 2.149757	Time elapsed: 0.000402s
+
+Pi value from 103 threads: 2.757609	Time elapsed: 0.000462s
+
+Pi value from 104 threads: 2.725123	Time elapsed: 0.000449s
+
+Pi value from 105 threads: 2.287288	Time elapsed: 0.000406s
+
+Pi value from 106 threads: 2.622552	Time elapsed: 0.000473s
+
+Pi value from 107 threads: 1.820855	Time elapsed: 0.000354s
+
+Pi value from 108 threads: 2.376874	Time elapsed: 0.000409s
+
+Pi value from 109 threads: 1.889174	Time elapsed: 0.000292s
+
+Pi value from 110 threads: 1.873363	Time elapsed: 0.000431s
+
+Pi value from 111 threads: 1.404533	Time elapsed: 0.000358s
+
+Pi value from 112 threads: 1.950078	Time elapsed: 0.000299s
+
+Pi value from 113 threads: 2.124658	Time elapsed: 0.000436s
+
+Pi value from 114 threads: 2.161056	Time elapsed: 0.000438s
+
+Pi value from 115 threads: 2.049284	Time elapsed: 0.000414s
+
+Pi value from 116 threads: 1.617244	Time elapsed: 0.000368s
+
+Pi value from 117 threads: 2.733826	Time elapsed: 0.000937s
+
+Pi value from 118 threads: 2.266655	Time elapsed: 0.000890s
+
+Pi value from 119 threads: 2.145250	Time elapsed: 0.000435s
+
+Pi value from 120 threads: 2.169335	Time elapsed: 0.000456s
+
+Pi value from 121 threads: 2.751439	Time elapsed: 0.000472s
+
+Pi value from 122 threads: 2.077201	Time elapsed: 0.000411s
+
+Pi value from 123 threads: 3.238890	Time elapsed: 0.000509s
+
+Pi value from 124 threads: 1.875351	Time elapsed: 0.000411s
+
+Pi value from 125 threads: 2.086487	Time elapsed: 0.000423s
+
+Pi value from 126 threads: 1.872658	Time elapsed: 0.000360s
+
+Pi value from 127 threads: 1.903111	Time elapsed: 0.000399s
+
+Pi value from 128 threads: 2.367128	Time elapsed: 0.000448s
+
+Pi value from 129 threads: 2.004973	Time elapsed: 0.000404s
+
+Pi value from 130 threads: 2.281324	Time elapsed: 0.000407s
+
+Pi value from 131 threads: 2.543950	Time elapsed: 0.000478s
+
+Pi value from 132 threads: 2.743699	Time elapsed: 0.000546s
+
+Pi value from 133 threads: 2.109287	Time elapsed: 0.000435s
+
+Pi value from 134 threads: 1.943648	Time elapsed: 0.000438s
+
+Pi value from 135 threads: 2.052305	Time elapsed: 0.000395s
+
+Pi value from 136 threads: 1.589620	Time elapsed: 0.000356s
+
+Pi value from 137 threads: 2.114946	Time elapsed: 0.000437s
+
+Pi value from 138 threads: 2.341770	Time elapsed: 0.000446s
+
+Pi value from 139 threads: 2.078651	Time elapsed: 0.000425s
+
+Pi value from 140 threads: 2.727583	Time elapsed: 0.000465s
+
+Pi value from 141 threads: 2.000238	Time elapsed: 0.000396s
+
+Pi value from 142 threads: 1.890905	Time elapsed: 0.000378s
+
+Pi value from 143 threads: 2.043485	Time elapsed: 0.000392s
+
+Pi value from 144 threads: 2.199867	Time elapsed: 0.000424s
+
+Pi value from 145 threads: 1.650390	Time elapsed: 0.000406s
+
+Pi value from 146 threads: 2.052139	Time elapsed: 0.000457s
+
+Pi value from 147 threads: 2.049916	Time elapsed: 0.000425s
+
+Pi value from 148 threads: 1.916283	Time elapsed: 0.000408s
+
+Pi value from 149 threads: 2.570639	Time elapsed: 0.000476s
+
+Pi value from 150 threads: 1.902207	Time elapsed: 0.000430s
+
+Pi value from 151 threads: 2.125228	Time elapsed: 0.000420s
+
+Pi value from 152 threads: 1.838996	Time elapsed: 0.000396s
+
+Pi value from 153 threads: 2.204619	Time elapsed: 0.000422s
+
+Pi value from 154 threads: 2.477910	Time elapsed: 0.000443s
+
+Pi value from 155 threads: 2.011122	Time elapsed: 0.000431s
+
+Pi value from 156 threads: 2.151361	Time elapsed: 0.000420s
+
+Pi value from 157 threads: 2.185912	Time elapsed: 0.000414s
+
+Pi value from 158 threads: 2.134702	Time elapsed: 0.000423s
+
+Pi value from 159 threads: 2.767071	Time elapsed: 0.000495s
+
+Pi value from 160 threads: 2.369698	Time elapsed: 0.000486s
+
+Pi value from 161 threads: 2.057925	Time elapsed: 0.000428s
+
+Pi value from 162 threads: 2.125235	Time elapsed: 0.000423s
+
+Pi value from 163 threads: 2.368387	Time elapsed: 0.000436s
+
+Pi value from 164 threads: 2.638484	Time elapsed: 0.000453s
+
+Pi value from 165 threads: 2.430341	Time elapsed: 0.000498s
+
+Pi value from 166 threads: 2.392328	Time elapsed: 0.000483s
+
+Pi value from 167 threads: 1.909451	Time elapsed: 0.000409s
+
+Pi value from 168 threads: 2.169665	Time elapsed: 0.000475s
+
+Pi value from 169 threads: 2.084135	Time elapsed: 0.000416s
+
+Pi value from 170 threads: 2.230701	Time elapsed: 0.000449s
+
+Pi value from 171 threads: 1.977817	Time elapsed: 0.000425s
+
+Pi value from 172 threads: 1.904537	Time elapsed: 0.000437s
+
+Pi value from 173 threads: 1.984470	Time elapsed: 0.000440s
+
+Pi value from 174 threads: 2.312275	Time elapsed: 0.000457s
+
+Pi value from 175 threads: 2.486162	Time elapsed: 0.000462s
+
+Pi value from 176 threads: 1.973204	Time elapsed: 0.000444s
+
+Pi value from 177 threads: 2.434852	Time elapsed: 0.000511s
+
+Pi value from 178 threads: 2.241061	Time elapsed: 0.000444s
+
+Pi value from 179 threads: 2.061528	Time elapsed: 0.000481s
+
+Pi value from 180 threads: 1.967223	Time elapsed: 0.000489s
+
+Pi value from 181 threads: 2.090279	Time elapsed: 0.000463s
+
+Pi value from 182 threads: 2.304576	Time elapsed: 0.000469s
+
+Pi value from 183 threads: 2.449713	Time elapsed: 0.000481s
+
+Pi value from 184 threads: 2.174803	Time elapsed: 0.000455s
+
+Pi value from 185 threads: 2.244291	Time elapsed: 0.000479s
+
+Pi value from 186 threads: 2.261173	Time elapsed: 0.000466s
+
+Pi value from 187 threads: 1.912808	Time elapsed: 0.000446s
+
+Pi value from 188 threads: 2.175924	Time elapsed: 0.000294s
+
+Pi value from 189 threads: 2.015377	Time elapsed: 0.000495s
+
+Pi value from 190 threads: 2.479795	Time elapsed: 0.000514s
+
+Pi value from 191 threads: 2.188656	Time elapsed: 0.000484s
+
+Pi value from 192 threads: 2.309279	Time elapsed: 0.000477s
+
+Pi value from 193 threads: 2.696107	Time elapsed: 0.000512s
+
+Pi value from 194 threads: 2.443532	Time elapsed: 0.000494s
+
+Pi value from 195 threads: 2.277802	Time elapsed: 0.000462s
+
+Pi value from 196 threads: 2.019371	Time elapsed: 0.000444s
+
+Pi value from 197 threads: 2.548902	Time elapsed: 0.000509s
+
+Pi value from 198 threads: 2.185431	Time elapsed: 0.000465s
+
+Pi value from 199 threads: 2.402976	Time elapsed: 0.000481s
+
+Pi value from 200 threads: 2.284437	Time elapsed: 0.000488s
+
+Pi value from 201 threads: 2.275115	Time elapsed: 0.000475s
+
+Pi value from 202 threads: 2.649738	Time elapsed: 0.000487s
+
+Pi value from 203 threads: 2.393030	Time elapsed: 0.000501s
+
+Pi value from 204 threads: 2.295969	Time elapsed: 0.000491s
+
+Pi value from 205 threads: 2.467815	Time elapsed: 0.000519s
+
+Pi value from 206 threads: 2.477535	Time elapsed: 0.000511s
+
+Pi value from 207 threads: 2.590156	Time elapsed: 0.000565s
+
+Pi value from 208 threads: 2.111473	Time elapsed: 0.000483s
+
+Pi value from 209 threads: 2.442761	Time elapsed: 0.000474s
+
+Pi value from 210 threads: 2.533626	Time elapsed: 0.000516s
+
+Pi value from 211 threads: 2.252035	Time elapsed: 0.000482s
+
+Pi value from 212 threads: 2.493476	Time elapsed: 0.000510s
+
+Pi value from 213 threads: 2.346352	Time elapsed: 0.000489s
+
+Pi value from 214 threads: 2.748840	Time elapsed: 0.000533s
+
+Pi value from 215 threads: 2.500153	Time elapsed: 0.000539s
+
+Pi value from 216 threads: 2.296089	Time elapsed: 0.000496s
+
+Pi value from 217 threads: 2.411886	Time elapsed: 0.000485s
+
+Pi value from 218 threads: 2.349003	Time elapsed: 0.000510s
+
+Pi value from 219 threads: 2.225426	Time elapsed: 0.000529s
+
+Pi value from 220 threads: 2.383165	Time elapsed: 0.000509s
+
+Pi value from 221 threads: 2.541348	Time elapsed: 0.000557s
+
+Pi value from 222 threads: 2.362851	Time elapsed: 0.000525s
+
+Pi value from 223 threads: 2.394608	Time elapsed: 0.000491s
+
+Pi value from 224 threads: 2.510234	Time elapsed: 0.000506s
+
+Pi value from 225 threads: 2.498906	Time elapsed: 0.000534s
+
+Pi value from 226 threads: 2.515372	Time elapsed: 0.000326s
+
+Pi value from 227 threads: 2.469972	Time elapsed: 0.000521s
+
+Pi value from 228 threads: 2.431031	Time elapsed: 0.000512s
+
+Pi value from 229 threads: 2.344023	Time elapsed: 0.000529s
+
+Pi value from 230 threads: 2.481357	Time elapsed: 0.000543s
+
+Pi value from 231 threads: 2.606631	Time elapsed: 0.000328s
+
+Pi value from 232 threads: 2.441847	Time elapsed: 0.000571s
+
+Pi value from 233 threads: 2.517554	Time elapsed: 0.000530s
+
+Pi value from 234 threads: 2.557703	Time elapsed: 0.000330s
+
+Pi value from 235 threads: 2.625370	Time elapsed: 0.000583s
+
+Pi value from 236 threads: 2.675856	Time elapsed: 0.000545s
+
+Pi value from 237 threads: 2.444488	Time elapsed: 0.000321s
+
+Pi value from 238 threads: 2.439042	Time elapsed: 0.000529s
+
+Pi value from 239 threads: 2.536950	Time elapsed: 0.000550s
+
+Pi value from 240 threads: 2.418330	Time elapsed: 0.000564s
+
+Pi value from 241 threads: 2.500352	Time elapsed: 0.000567s
+
+Pi value from 242 threads: 2.702163	Time elapsed: 0.000577s
+
+Pi value from 243 threads: 2.786354	Time elapsed: 0.000557s
+
+Pi value from 244 threads: 2.187767	Time elapsed: 0.000550s
+
+Pi value from 245 threads: 2.594613	Time elapsed: 0.000332s
+
+Pi value from 246 threads: 2.900649	Time elapsed: 0.000655s
+
+Pi value from 247 threads: 2.547469	Time elapsed: 0.000373s
+
+Pi value from 248 threads: 2.751890	Time elapsed: 0.000635s
+
+Pi value from 249 threads: 2.454499	Time elapsed: 0.000577s
+
+Pi value from 250 threads: 2.655186	Time elapsed: 0.000598s
+
+Pi value from 251 threads: 2.514986	Time elapsed: 0.000553s
+
+Pi value from 252 threads: 2.690747	Time elapsed: 0.000551s
+
+Pi value from 253 threads: 2.718275	Time elapsed: 0.000582s
+
+Pi value from 254 threads: 2.556103	Time elapsed: 0.000563s
+
+Pi value from 255 threads: 2.599374	Time elapsed: 0.000344s
+
+Pi value from 256 threads: 2.227331	Time elapsed: 0.000548s
+
+Pi value from 257 threads: 2.346038	Time elapsed: 0.000539s
+
+Pi value from 258 threads: 2.720974	Time elapsed: 0.000579s
+
+Pi value from 259 threads: 2.463745	Time elapsed: 0.000572s
+
+Pi value from 260 threads: 2.419130	Time elapsed: 0.000565s
+
+Pi value from 261 threads: 2.410578	Time elapsed: 0.000561s
+
+Pi value from 262 threads: 2.422063	Time elapsed: 0.000331s
+
+Pi value from 263 threads: 2.579989	Time elapsed: 0.000582s
+
+Pi value from 264 threads: 2.545704	Time elapsed: 0.000585s
+
+Pi value from 265 threads: 2.391892	Time elapsed: 0.000540s
+
+Pi value from 266 threads: 2.712310	Time elapsed: 0.000568s
+
+Pi value from 267 threads: 2.492862	Time elapsed: 0.000563s
+
+Pi value from 268 threads: 2.388046	Time elapsed: 0.000556s
+
+Pi value from 269 threads: 2.765890	Time elapsed: 0.000579s
+
+Pi value from 270 threads: 2.328798	Time elapsed: 0.000548s
+
+Pi value from 271 threads: 2.464955	Time elapsed: 0.000585s
+
+Pi value from 272 threads: 2.631324	Time elapsed: 0.000561s
+
+Pi value from 273 threads: 2.321559	Time elapsed: 0.000314s
+
+Pi value from 274 threads: 2.602649	Time elapsed: 0.000637s
+
+Pi value from 275 threads: 2.666924	Time elapsed: 0.000588s
+
+Pi value from 276 threads: 2.623333	Time elapsed: 0.000566s
+
+Pi value from 277 threads: 2.662600	Time elapsed: 0.000573s
+
+Pi value from 278 threads: 2.538283	Time elapsed: 0.000581s
+
+Pi value from 279 threads: 2.330907	Time elapsed: 0.000593s
+
+Pi value from 280 threads: 2.510792	Time elapsed: 0.000615s
+
+Pi value from 281 threads: 2.492073	Time elapsed: 0.000601s
+
+Pi value from 282 threads: 2.528388	Time elapsed: 0.000591s
+
+Pi value from 283 threads: 2.493089	Time elapsed: 0.000588s
+
+Pi value from 284 threads: 2.702715	Time elapsed: 0.000622s
+
+Pi value from 285 threads: 2.615233	Time elapsed: 0.000615s
+
+Pi value from 286 threads: 2.716412	Time elapsed: 0.000592s
+
+Pi value from 287 threads: 2.653990	Time elapsed: 0.000615s
+
+Pi value from 288 threads: 2.570847	Time elapsed: 0.000575s
+
+Pi value from 289 threads: 2.470964	Time elapsed: 0.000603s
+
+Pi value from 290 threads: 2.437455	Time elapsed: 0.000594s
+
+Pi value from 291 threads: 2.475659	Time elapsed: 0.000583s
+
+Pi value from 292 threads: 2.576974	Time elapsed: 0.000359s
+
+Pi value from 293 threads: 2.474553	Time elapsed: 0.000568s
+
+Pi value from 294 threads: 2.638554	Time elapsed: 0.000616s
+
+Pi value from 295 threads: 2.511589	Time elapsed: 0.000597s
+
+Pi value from 296 threads: 2.701928	Time elapsed: 0.000616s
+
+Pi value from 297 threads: 2.489649	Time elapsed: 0.000611s
+
+Pi value from 298 threads: 2.685492	Time elapsed: 0.000623s
+
+Pi value from 299 threads: 2.495658	Time elapsed: 0.000617s
+
+Pi value from 300 threads: 2.490005	Time elapsed: 0.000618s
+
+Pi value from 301 threads: 2.620274	Time elapsed: 0.000637s
+
+Pi value from 302 threads: 2.572784	Time elapsed: 0.000639s
+
+Pi value from 303 threads: 2.567570	Time elapsed: 0.000626s
+
+Pi value from 304 threads: 2.802708	Time elapsed: 0.000649s
+
+Pi value from 305 threads: 2.719749	Time elapsed: 0.000403s
+
+Pi value from 306 threads: 2.498164	Time elapsed: 0.000631s
+
+Pi value from 307 threads: 2.838589	Time elapsed: 0.000624s
+
+Pi value from 308 threads: 2.337154	Time elapsed: 0.000637s
+
+Pi value from 309 threads: 2.641579	Time elapsed: 0.000626s
+
+Pi value from 310 threads: 2.485058	Time elapsed: 0.000631s
+
+Pi value from 311 threads: 2.724583	Time elapsed: 0.000413s
+
+Pi value from 312 threads: 2.671294	Time elapsed: 0.000664s
+
+Pi value from 313 threads: 2.650433	Time elapsed: 0.000643s
+
+Pi value from 314 threads: 2.620672	Time elapsed: 0.000399s
+
+Pi value from 315 threads: 2.630796	Time elapsed: 0.000668s
+
+Pi value from 316 threads: 2.600421	Time elapsed: 0.000628s
+
+Pi value from 317 threads: 2.621934	Time elapsed: 0.000668s
+
+Pi value from 318 threads: 2.508924	Time elapsed: 0.000643s
+
+Pi value from 319 threads: 2.691568	Time elapsed: 0.000517s
+
+Pi value from 320 threads: 2.447263	Time elapsed: 0.000623s
+
+Pi value from 321 threads: 2.620663	Time elapsed: 0.000648s
+
+Pi value from 322 threads: 2.675373	Time elapsed: 0.000667s
+
+Pi value from 323 threads: 2.442603	Time elapsed: 0.000667s
+
+Pi value from 324 threads: 2.566374	Time elapsed: 0.000672s
+
+Pi value from 325 threads: 2.686939	Time elapsed: 0.000692s
+
+Pi value from 326 threads: 2.599304	Time elapsed: 0.000685s
+
+Pi value from 327 threads: 2.609366	Time elapsed: 0.000667s
+
+Pi value from 328 threads: 2.659617	Time elapsed: 0.000679s
+
+Pi value from 329 threads: 2.492381	Time elapsed: 0.000717s
+
+Pi value from 330 threads: 2.533405	Time elapsed: 0.000687s
+
+Pi value from 331 threads: 2.515928	Time elapsed: 0.000675s
+
+Pi value from 332 threads: 2.516006	Time elapsed: 0.000690s
+
+Pi value from 333 threads: 2.507745	Time elapsed: 0.000651s
+
+Pi value from 334 threads: 2.774580	Time elapsed: 0.000679s
+
+Pi value from 335 threads: 2.573182	Time elapsed: 0.000707s
+
+Pi value from 336 threads: 2.519215	Time elapsed: 0.000662s
+
+Pi value from 337 threads: 2.788459	Time elapsed: 0.000684s
+
+Pi value from 338 threads: 2.666879	Time elapsed: 0.000703s
+
+Pi value from 339 threads: 2.678506	Time elapsed: 0.000401s
+
+Pi value from 340 threads: 2.542669	Time elapsed: 0.000659s
+
+Pi value from 341 threads: 2.563509	Time elapsed: 0.000674s
+
+Pi value from 342 threads: 2.484868	Time elapsed: 0.000386s
+
+Pi value from 343 threads: 2.752120	Time elapsed: 0.000662s
+
+Pi value from 344 threads: 2.493021	Time elapsed: 0.000746s
+
+Pi value from 345 threads: 2.786001	Time elapsed: 0.000705s
+
+Pi value from 346 threads: 2.698926	Time elapsed: 0.000409s
+
+Pi value from 347 threads: 2.605069	Time elapsed: 0.000693s
+
+Pi value from 348 threads: 2.531161	Time elapsed: 0.000672s
+
+Pi value from 349 threads: 2.695941	Time elapsed: 0.000707s
+
+Pi value from 350 threads: 2.650147	Time elapsed: 0.000717s
+
+Pi value from 351 threads: 2.545559	Time elapsed: 0.000393s
+
+Pi value from 352 threads: 2.770746	Time elapsed: 0.000789s
+
+Pi value from 353 threads: 2.474768	Time elapsed: 0.000715s
+
+Pi value from 354 threads: 2.698670	Time elapsed: 0.000717s
+
+Pi value from 355 threads: 2.761403	Time elapsed: 0.000743s
+
+Pi value from 356 threads: 2.625553	Time elapsed: 0.000728s
+
+Pi value from 357 threads: 2.703734	Time elapsed: 0.000723s
+
+Pi value from 358 threads: 2.688782	Time elapsed: 0.000737s
+
+Pi value from 359 threads: 2.737472	Time elapsed: 0.000734s
+
+Pi value from 360 threads: 2.618762	Time elapsed: 0.000704s
+
+Pi value from 361 threads: 2.436907	Time elapsed: 0.000725s
+
+Pi value from 362 threads: 2.674192	Time elapsed: 0.000756s
+
+Pi value from 363 threads: 2.677211	Time elapsed: 0.000723s
+
+Pi value from 364 threads: 2.528035	Time elapsed: 0.000729s
+
+Pi value from 365 threads: 2.583099	Time elapsed: 0.000733s
+
+Pi value from 366 threads: 2.464386	Time elapsed: 0.000739s
+
+Pi value from 367 threads: 2.632965	Time elapsed: 0.000722s
+
+Pi value from 368 threads: 2.702499	Time elapsed: 0.000772s
+
+Pi value from 369 threads: 2.879135	Time elapsed: 0.000760s
+
+Pi value from 370 threads: 2.600910	Time elapsed: 0.000734s
+
+Pi value from 371 threads: 2.621290	Time elapsed: 0.000756s
+
+Pi value from 372 threads: 2.560293	Time elapsed: 0.000723s
+
+Pi value from 373 threads: 2.796887	Time elapsed: 0.000752s
+
+Pi value from 374 threads: 2.680631	Time elapsed: 0.000770s
+
+Pi value from 375 threads: 2.613970	Time elapsed: 0.000757s
+
+Pi value from 376 threads: 2.647651	Time elapsed: 0.000759s
+
+Pi value from 377 threads: 2.636084	Time elapsed: 0.000782s
+
+Pi value from 378 threads: 2.547088	Time elapsed: 0.000748s
+
+Pi value from 379 threads: 2.563542	Time elapsed: 0.000721s
+
+Pi value from 380 threads: 2.677402	Time elapsed: 0.000749s
+
+Pi value from 381 threads: 2.622202	Time elapsed: 0.000759s
+
+Pi value from 382 threads: 2.811169	Time elapsed: 0.000784s
+
+Pi value from 383 threads: 2.787589	Time elapsed: 0.000774s
+
+Pi value from 384 threads: 2.779004	Time elapsed: 0.000817s
+
+Pi value from 385 threads: 2.767163	Time elapsed: 0.000889s
+
+Pi value from 386 threads: 2.909556	Time elapsed: 0.000457s
+
+Pi value from 387 threads: 2.762050	Time elapsed: 0.000865s
+
+Pi value from 388 threads: 2.788736	Time elapsed: 0.000807s
+
+Pi value from 389 threads: 2.748987	Time elapsed: 0.000818s
+
+Pi value from 390 threads: 2.674352	Time elapsed: 0.000764s
+
+Pi value from 391 threads: 2.758910	Time elapsed: 0.000777s
+
+Pi value from 392 threads: 2.743889	Time elapsed: 0.000796s
+
+Pi value from 393 threads: 2.774391	Time elapsed: 0.000759s
+
+Pi value from 394 threads: 2.823524	Time elapsed: 0.000781s
+
+Pi value from 395 threads: 2.693420	Time elapsed: 0.000788s
+
+Pi value from 396 threads: 2.629005	Time elapsed: 0.000765s
+
+Pi value from 397 threads: 2.608288	Time elapsed: 0.000785s
+
+Pi value from 398 threads: 2.839448	Time elapsed: 0.000826s
+
+Pi value from 399 threads: 2.724918	Time elapsed: 0.000766s
+
+Pi value from 400 threads: 2.603172	Time elapsed: 0.000792s
+
+Pi value from 401 threads: 2.717574	Time elapsed: 0.000798s
+
+Pi value from 402 threads: 2.713096	Time elapsed: 0.000786s
+
+Pi value from 403 threads: 2.756817	Time elapsed: 0.000809s
+
+Pi value from 404 threads: 2.773562	Time elapsed: 0.000830s
+
+Pi value from 405 threads: 2.751907	Time elapsed: 0.000777s
+
+Pi value from 406 threads: 2.770073	Time elapsed: 0.000812s
+
+Pi value from 407 threads: 2.831239	Time elapsed: 0.000490s
+
+Pi value from 408 threads: 3.047906	Time elapsed: 0.000870s
+
+Pi value from 409 threads: 2.840470	Time elapsed: 0.000791s
+
+Pi value from 410 threads: 2.671575	Time elapsed: 0.000767s
+
+Pi value from 411 threads: 2.784640	Time elapsed: 0.000794s
+
+Pi value from 412 threads: 2.834457	Time elapsed: 0.000813s
+
+Pi value from 413 threads: 2.768375	Time elapsed: 0.000831s
+
+Pi value from 414 threads: 2.654458	Time elapsed: 0.000787s
+
+Pi value from 415 threads: 2.830553	Time elapsed: 0.000797s
+
+Pi value from 416 threads: 2.687455	Time elapsed: 0.000799s
+
+Pi value from 417 threads: 2.785058	Time elapsed: 0.000815s
+
+Pi value from 418 threads: 2.744443	Time elapsed: 0.000817s
+
+Pi value from 419 threads: 2.950360	Time elapsed: 0.000833s
+
+Pi value from 420 threads: 2.786230	Time elapsed: 0.000814s
+
+Pi value from 421 threads: 2.828552	Time elapsed: 0.000822s
+
+Pi value from 422 threads: 2.772619	Time elapsed: 0.000832s
+
+Pi value from 423 threads: 2.695748	Time elapsed: 0.000825s
+
+Pi value from 424 threads: 2.731085	Time elapsed: 0.000856s
+
+Pi value from 425 threads: 2.770971	Time elapsed: 0.000821s
+
+Pi value from 426 threads: 2.794617	Time elapsed: 0.000833s
+
+Pi value from 427 threads: 2.899888	Time elapsed: 0.000836s
+
+Pi value from 428 threads: 2.715377	Time elapsed: 0.000810s
+
+Pi value from 429 threads: 2.750190	Time elapsed: 0.000817s
+
+Pi value from 430 threads: 2.756782	Time elapsed: 0.000878s
+
+Pi value from 431 threads: 2.708348	Time elapsed: 0.000820s
+
+Pi value from 432 threads: 2.755061	Time elapsed: 0.000839s
+
+Pi value from 433 threads: 2.770222	Time elapsed: 0.000844s
+
+Pi value from 434 threads: 2.701330	Time elapsed: 0.000818s
+
+Pi value from 435 threads: 2.864791	Time elapsed: 0.000865s
+
+Pi value from 436 threads: 2.719302	Time elapsed: 0.000849s
+
+Pi value from 437 threads: 2.815984	Time elapsed: 0.000833s
+
+Pi value from 438 threads: 2.706090	Time elapsed: 0.000858s
+
+Pi value from 439 threads: 2.795356	Time elapsed: 0.000862s
+
+Pi value from 440 threads: 2.696188	Time elapsed: 0.000858s
+
+Pi value from 441 threads: 2.795111	Time elapsed: 0.000866s
+
+Pi value from 442 threads: 2.822255	Time elapsed: 0.000867s
+
+Pi value from 443 threads: 2.719709	Time elapsed: 0.000846s
+
+Pi value from 444 threads: 2.749117	Time elapsed: 0.000859s
+
+Pi value from 445 threads: 2.829377	Time elapsed: 0.000883s
+
+Pi value from 446 threads: 2.747956	Time elapsed: 0.000834s
+
+Pi value from 447 threads: 2.790712	Time elapsed: 0.000875s
+
+Pi value from 448 threads: 2.729900	Time elapsed: 0.000886s
+
+Pi value from 449 threads: 2.817803	Time elapsed: 0.000865s
+
+Pi value from 450 threads: 2.761650	Time elapsed: 0.000884s
+
+Pi value from 451 threads: 2.691928	Time elapsed: 0.000898s
+
+Pi value from 452 threads: 2.802980	Time elapsed: 0.000883s
+
+Pi value from 453 threads: 2.827854	Time elapsed: 0.000876s
+
+Pi value from 454 threads: 2.833764	Time elapsed: 0.000892s
+
+Pi value from 455 threads: 2.748220	Time elapsed: 0.000869s
+
+Pi value from 456 threads: 2.738709	Time elapsed: 0.000888s
+
+Pi value from 457 threads: 2.791919	Time elapsed: 0.000963s
+
+Pi value from 458 threads: 2.661675	Time elapsed: 0.000886s
+
+Pi value from 459 threads: 2.732985	Time elapsed: 0.000899s
+
+Pi value from 460 threads: 2.730563	Time elapsed: 0.000894s
+
+Pi value from 461 threads: 2.849180	Time elapsed: 0.000895s
+
+Pi value from 462 threads: 2.763328	Time elapsed: 0.000892s
+
+Pi value from 463 threads: 2.703702	Time elapsed: 0.000910s
+
+Pi value from 464 threads: 2.833870	Time elapsed: 0.000883s
+
+Pi value from 465 threads: 2.869533	Time elapsed: 0.000883s
+
+Pi value from 466 threads: 2.925714	Time elapsed: 0.000932s
+
+Pi value from 467 threads: 2.861885	Time elapsed: 0.000880s
+
+Pi value from 468 threads: 2.786031	Time elapsed: 0.000909s
+
+Pi value from 469 threads: 2.847121	Time elapsed: 0.000927s
+
+Pi value from 470 threads: 2.819347	Time elapsed: 0.000898s
+
+Pi value from 471 threads: 2.729164	Time elapsed: 0.000917s
+
+Pi value from 472 threads: 2.771268	Time elapsed: 0.000920s
+
+Pi value from 473 threads: 2.770659	Time elapsed: 0.000507s
+
+Pi value from 474 threads: 2.847295	Time elapsed: 0.000873s
+
+Pi value from 475 threads: 2.808495	Time elapsed: 0.001011s
+
+Pi value from 476 threads: 2.810517	Time elapsed: 0.001033s
+
+Pi value from 477 threads: 2.885244	Time elapsed: 0.000965s
+
+Pi value from 478 threads: 2.814638	Time elapsed: 0.000938s
+
+Pi value from 479 threads: 2.857252	Time elapsed: 0.000910s
+
+Pi value from 480 threads: 2.961863	Time elapsed: 0.000545s
+
+Pi value from 481 threads: 2.899544	Time elapsed: 0.001160s
+
+Pi value from 482 threads: 2.870255	Time elapsed: 0.001120s
+
+Pi value from 483 threads: 2.859946	Time elapsed: 0.001064s
+
+Pi value from 484 threads: 2.820567	Time elapsed: 0.000987s
+
+Pi value from 485 threads: 2.895385	Time elapsed: 0.000945s
+
+Pi value from 486 threads: 2.872000	Time elapsed: 0.000966s
+
+Pi value from 487 threads: 2.826326	Time elapsed: 0.000949s
+
+Pi value from 488 threads: 2.897203	Time elapsed: 0.000923s
+
+Pi value from 489 threads: 2.853836	Time elapsed: 0.000959s
+
+Pi value from 490 threads: 2.917221	Time elapsed: 0.000967s
+
+Pi value from 491 threads: 2.939251	Time elapsed: 0.000946s
+
+Pi value from 492 threads: 2.897400	Time elapsed: 0.000970s
+
+Pi value from 493 threads: 2.754196	Time elapsed: 0.000995s
+
+Pi value from 494 threads: 2.748168	Time elapsed: 0.000934s
+
+Pi value from 495 threads: 2.891391	Time elapsed: 0.001004s
+
+Pi value from 496 threads: 2.713222	Time elapsed: 0.000990s
+
+Pi value from 497 threads: 2.806102	Time elapsed: 0.000938s
+
+Pi value from 498 threads: 2.869897	Time elapsed: 0.001012s
+
+Pi value from 499 threads: 2.845036	Time elapsed: 0.001007s
+

@@ -12,6 +12,12 @@ int main(int argc, char *argv[])
   wbArg_t args;
   int inputLength, num_bins;
   unsigned int *hostInput = NULL;
+  
+  if(argc != 3)
+  {
+    printf("\nUsage: ./a.out <input.raw> <output.raw>\n\n");
+    exit(1);
+  }
 
   args = wbArg_read(argc, argv);
 

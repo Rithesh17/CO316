@@ -1,0 +1,22 @@
+Blurring of the Image
+
+Contributors:
+Anusha S (16CO102)
+Rithesh K (16CO253)
+
+We have implemented the function in the "template.cu" file. The generated file is stored in the "convoluted.ppm" file.
+Screenshot of the execution is not included as the output is evident from the "convoluted.ppm" file.
+
+Questions:
+
+1. How many floating operations are being performed in your color conversion kernel?
+    Around 9 * imageWidth * imageHeight operations(each pixel has 9 neighbours (including itself), and so the sum is added 9 times (except for the corner pixels)).
+
+2. How many global memory reads are being performed by your kernel?
+    Around 9 * imageWidth * imageHeight reads (each pixel has 9 neighbours (including itself), and so is loaded 9 times (except for the corner pixels)).
+
+3. How many global memory writes are being performed by your kernel?
+    imageWidth * imageHeight writes (for the output image)
+
+4. Describe what possible optimizations can be implemented to your kernel to achieve a performance speedup.
+    The load operations can be greatly reduced if coded optimally. This is because we are loading the same pixel 9 times, which is heavily redundant.
