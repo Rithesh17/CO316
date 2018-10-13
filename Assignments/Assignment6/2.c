@@ -1,3 +1,5 @@
+// 2. DAXPY Loop
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpi.h>
