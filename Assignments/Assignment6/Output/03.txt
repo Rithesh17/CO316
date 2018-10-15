@@ -1,0 +1,9 @@
+Process 0 received message 'Hello World!ÿ' from process 1
+Process 0 received message 'Hello World!ÿ' from process 2
+Process 0 received message 'Hello World!ÿ' from process 3
+Process 0 received message 'Hello World!ÿ' from process 4
+Process 0 received message 'Hello World!ÿ' from process 5
+Process 0 received message 'Hello World!ÿ' from process 6
+Process 0 received message 'Hello World!ÿ' from process 7
+Process 0 received message 'Hello World!ÿ' from process 8
+Process 0 received message 'Hello World!ÿ' from process 9

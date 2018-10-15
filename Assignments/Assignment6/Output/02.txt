@@ -1,0 +1,4 @@
+Number of processes: 16
+Time taken for MPI implementation: 0.056383
+Time taken for uniprocessor implementation: 0.075739
+Speedup: 1.343286

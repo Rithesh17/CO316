@@ -1,0 +1,11 @@
+Process 0: Data before broadcast: {'a', [0, 1], [0.000000, 1.000000, 2.000000, 3.000000]}
+Process 0: Broadcast message recieved. Data: {'a', [0, 1], [0.000000, 1.000000, 2.000000, 3.000000]}
+Process 1: Data before broadcast: {'z', [-1, -1], [0.000000, 0.000000, 0.000000, 0.000000]}
+Process 1: Broadcast message recieved. Data: {'a', [0, 1], [0.000000, 1.000000, 2.000000, 0.000000]}
+Process 1: P2P message recieved. Data: {'b', [10, 11], [10.000000, 11.000000, 12.000000, 0.000000]}
+Process 2: Data before broadcast: {'z', [-1, -1], [0.000000, 0.000000, 0.000000, 0.000000]}
+Process 3: Data before broadcast: {'z', [-1, -1], [0.000000, 0.000000, 0.000000, 0.000000]}
+Process 2: Broadcast message recieved. Data: {'a', [0, 1], [0.000000, 1.000000, 2.000000, 0.000000]}
+Process 3: Broadcast message recieved. Data: {'a', [0, 1], [0.000000, 1.000000, 2.000000, 0.000000]}
+Process 3: P2P message recieved. Data: {'b', [10, 11], [10.000000, 11.000000, 12.000000, 0.000000]}
+Process 2: P2P message recieved. Data: {'b', [10, 11], [10.000000, 11.000000, 12.000000, 0.000000]}
