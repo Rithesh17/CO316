@@ -169,10 +169,14 @@ int main()
   long int* dim;
   dim = get_graph_dim("01.txt");
 
+  printf("Hello!\n");
+
   long int v = dim[0], e = dim[1];
   long int* csr;
 
   csr = read_csr("01.txt", v, e);
+
+  printf("Holla!!\n");
 
   long int *r, *c;
   double *bc;
@@ -189,6 +193,8 @@ int main()
   long int *d_r, *d_c;
   double *d_bc;
 
+  printf("Sui!\n");
+
   cudaMalloc((void**)&d_v, sizeof(long int));
   cudaMalloc((void**)&d_e, sizeof(long int));
   cudaMalloc((void**)&d_bc, v * sizeof(double));
@@ -199,6 +205,8 @@ int main()
   cudaMemcpy(d_e, &e, sizeof(long int), cudaMemcpyHostToDevice);
   cudaMemcpy(d_r, r, (v+1)*sizeof(long int), cudaMemcpyHostToDevice);
   cudaMemcpy(d_c, c, 2*e*sizeof(long int), cudaMemcpyHostToDevice);
+
+  printf("Namaskara!\n");
 
   dim3 dimGrid(v);
   dim3 dimBlock(1024);
