@@ -104,6 +104,7 @@ void calculate_bc(std::vector<long double>& c_b, long int* r, long int* c, long 
 
     std::vector<long double> dep (v);
 
+    // for(long int w=0; w<v; w++)
     while(!S.empty())
     {
       long int w = S.back();
