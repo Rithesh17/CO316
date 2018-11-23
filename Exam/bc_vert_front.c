@@ -51,7 +51,7 @@ __global__ void between_centre(long float* bc, int* R, int* C, long int V, long 
   long int s = blockIdx.x;
 
   __shared__ long int d[V], sigma[V];
-    long float dep[V];
+  long float dep[V];
 
   __shared__ long int P[V][V];
   __shared__ long int p_top[V];
@@ -102,7 +102,7 @@ __global__ void between_centre(long float* bc, int* R, int* C, long int V, long 
       for(int r=R[v]; r<R[v+1]; r++)
       {
         long int w = C[r];
-        
+
         if(atomicCAS(&d[w],INT_MAX,d[v]+1) == INT_MAX)
         {
           int t = atomicAdd(&Q2_len,1);
