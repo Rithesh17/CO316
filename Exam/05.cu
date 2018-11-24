@@ -1,3 +1,4 @@
+%%cu
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -304,7 +305,7 @@ int main()
     bc[j] = 0;
     tot_bc[j] = 0;
   }
-/*
+
   int *d_r, *d_c;
   double *d_bc;
 
@@ -314,20 +315,16 @@ int main()
   cudaMemcpy(d_r, r, (V+1)*sizeof(int), cudaMemcpyHostToDevice);
   cudaMemcpy(d_c, c, 2*E*sizeof(int), cudaMemcpyHostToDevice);
 
-  dim3 dimGrid(2);
+  dim3 dimGrid(1);
   dim3 dimBlock(9);
-
-    printf("Hi!!\n");
 
   cudaMalloc((void**)&d_bc, V * sizeof(double));
 
   cudaMemcpy(d_bc, bc, V*sizeof(double), cudaMemcpyHostToDevice);
 
-  between_centre<<<dimGrid, dimBlock>>>( d_bc, d_r, d_c, 0);
+  between_centre<<<dimGrid, dimBlock>>>( d_bc, d_r, d_c, 8);
 
   cudaMemcpy(bc, d_bc, V*sizeof(double), cudaMemcpyDeviceToHost);
-
-    printf("Hello!!");
 
   for(j=0; j<V; j++)
     printf("%f ", bc[j]);
@@ -343,12 +340,12 @@ int main()
   cudaEventDestroy(stop);
 
   int k;
-
+/*
   for(k = 0; k < V; k++)
       printf("%f ", tot_bc[k]);
-
+*/
   printf("\nElapsed Time: %lf\n", timer);
 
   free(r);
-  free(c);*/
+  free(c);
 }
